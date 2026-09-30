@@ -12,6 +12,7 @@ pipeline {
             }
         }
         stage ('Sonar Analysis') {
+            tools { jdk 'JDK11' }
             environment {
                 scannerHome = tool 'SONAR_SCANNER'
             }
