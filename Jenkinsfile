@@ -52,5 +52,13 @@ pipeline {
                 }
             }
         }
+        stage ('Functional test') {
+            steps {
+                dir('functional-test') {
+                    git branch: 'main', url: 'https://github.com/JoaoBortoliero/tasks-functional-test'
+                    bat 'mvn test'
+                }
+            }
+        }
     }
 }
